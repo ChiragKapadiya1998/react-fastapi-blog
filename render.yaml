@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: react-fastapi-backend
+    env: python
+    buildCommand: "pip install -r backend/requirements.txt"
+    startCommand: "cd backend && uvicorn main:app --host 0.0.0.0 --port 10000"
+    envVars:
+      - key: DATABASE_URL
+        sync: false # Requires manual entry in the dashboard
+      - key: SECRET_KEY
+        generateValue: true # Render will automatically generate a secure 256-bit string

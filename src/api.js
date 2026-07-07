@@ -1,4 +1,5 @@
-const API_URL = 'http://localhost:8000';
+// Use the live API URL if set (production), otherwise default to local development URL
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 export const apiCall = async (endpoint, options = {}) => {
   const token = localStorage.getItem('token');
