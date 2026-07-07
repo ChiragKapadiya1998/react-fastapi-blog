@@ -15,7 +15,11 @@ app = FastAPI(title="React Blog API")
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # In production, restrict to frontend URL
+    allow_origins=[
+        "http://localhost:5173",
+        "http://localhost:3000",
+        "https://react-fastapi-blog.vercel.app"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
