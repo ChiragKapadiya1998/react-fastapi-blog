@@ -2,6 +2,8 @@
 
 A modern, full-stack blogging platform built with a **React (Vite)** frontend and a **Python FastAPI** backend. It features user authentication, a rich post feed, interactive comments, and a comprehensive follower system.
 
+<img src="./app_showcase.webp" alt="App Showcase" width="100%" />
+
 ## 🌟 Features
 
 - **User Authentication:** Secure signup and login using JWT (JSON Web Tokens) and `bcrypt` password hashing.
