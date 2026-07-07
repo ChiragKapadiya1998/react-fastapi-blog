@@ -448,3 +448,166 @@ textarea.form-input {
   border-radius: var(--border-radius);
   border: 1px dashed var(--border-color);
 }
+
+/* Profile Layout */
+.profile-header-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-name-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.profile-title {
+  margin-bottom: 0.5rem;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-email {
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-stats {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.clickable-stat {
+  cursor: pointer;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.stat-label {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.stat-primary {
+  color: var(--primary-color);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  /* Layout */
+  .main-content {
+    padding: 1rem;
+  }
+  
+  /* Navbar */
+  .nav-container {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .nav-logo {
+    width: 100%;
+    text-align: center;
+    font-size: 1.8rem;
+  }
+  
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  /* Forms */
+  .form-container {
+    padding: 1.5rem;
+    margin: 1rem auto;
+  }
+  
+  /* Profile */
+  .profile-header-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+    font-size: 2.5rem;
+  }
+  
+  .profile-name-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .profile-title {
+    justify-content: center;
+    font-size: 1.5rem;
+  }
+  
+  .profile-email {
+    justify-content: center;
+  }
+  
+  .profile-stats {
+    gap: 1.5rem;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .stat-value {
+    font-size: 1.2rem;
+  }
+  
+  /* Post Card */
+  .post-header {
+    align-items: center;
+  }
+  
+  .post-card {
+    padding: 1.2rem;
+  }
+  
+  .post-title {
+    font-size: 1.2rem;
+  }
+}

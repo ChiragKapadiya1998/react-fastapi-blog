@@ -30,8 +30,15 @@ export default function Navbar() {
                 <PenSquare size={18} /> Write
               </Link>
               <div className="nav-user">
-                <Link to="/profile" className="nav-username" style={{ textDecoration: 'none' }}>
-                  {profile?.first_name} {profile?.last_name}
+                <Link to="/profile" style={{ textDecoration: 'none' }} title="My Profile">
+                  <div style={{
+                    width: '36px', height: '36px', borderRadius: '50%',
+                    backgroundColor: 'var(--primary-color)', color: 'white',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    fontWeight: 'bold', fontSize: '1rem', border: '2px solid var(--border-color)'
+                  }}>
+                    {profile?.first_name?.[0]}{profile?.last_name?.[0] || ''}
+                  </div>
                 </Link>
                 <button onClick={handleSignOut} className="btn-icon" title="Log out">
                   <LogOut size={20} />

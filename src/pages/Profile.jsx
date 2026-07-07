@@ -140,18 +140,13 @@ export default function Profile() {
 
   return (
     <div>
-      <div className="page-header" style={{ display: 'flex', alignItems: 'flex-start', gap: '2rem' }}>
-        <div style={{
-          width: '120px', height: '120px', borderRadius: '50%', 
-          backgroundColor: 'var(--primary-color)', display: 'flex', 
-          alignItems: 'center', justifyContent: 'center', fontSize: '3.5rem', fontWeight: 'bold',
-          flexShrink: 0
-        }}>
+      <div className="profile-header-container">
+        <div className="profile-avatar">
           {displayProfile?.first_name?.[0]}{displayProfile?.last_name?.[0]}
         </div>
         
-        <div style={{ flex: 1 }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+        <div className="profile-info">
+          <div className="profile-name-row">
             <div>
               {isEditing ? (
                 <div style={{ display: 'flex', gap: '1rem', marginBottom: '0.5rem', alignItems: 'center' }}>
@@ -179,7 +174,7 @@ export default function Profile() {
                   </button>
                 </div>
               ) : (
-                <h1 className="page-title" style={{ marginBottom: '0.5rem', textAlign: 'left', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <h1 className="page-title profile-title">
                   {displayProfile?.first_name} {displayProfile?.last_name}
                   {isOwnProfile && (
                     <button className="btn-icon" onClick={() => setIsEditing(true)} title="Edit Name">
@@ -188,7 +183,7 @@ export default function Profile() {
                   )}
                 </h1>
               )}
-              <div style={{ color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem' }}>
+              <div className="profile-email">
                 <Mail size={16} /> {displayProfile?.email}
               </div>
             </div>
@@ -208,24 +203,24 @@ export default function Profile() {
             )}
           </div>
 
-          <div style={{ display: 'flex', gap: '2rem', padding: '1rem 0', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
-            <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>{profileData?.post_count || userPosts.length}</div>
-              <div style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '0.3rem' }}><FileText size={14}/> Posts</div>
+          <div className="profile-stats">
+            <div className="stat-item">
+              <div className="stat-value">{profileData?.post_count || userPosts.length}</div>
+              <div className="stat-label"><FileText size={14}/> Posts</div>
             </div>
             <div 
-              style={{ textAlign: 'center', cursor: 'pointer' }}
+              className="stat-item clickable-stat"
               onClick={() => openUsersList('followers')}
             >
-              <div style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>{profileData?.followers_count || 0}</div>
-              <div style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '0.3rem', color: 'var(--primary-color)' }}><Users size={14}/> Followers</div>
+              <div className="stat-value">{profileData?.followers_count || 0}</div>
+              <div className="stat-label stat-primary"><Users size={14}/> Followers</div>
             </div>
             <div 
-              style={{ textAlign: 'center', cursor: 'pointer' }}
+              className="stat-item clickable-stat"
               onClick={() => openUsersList('following')}
             >
-              <div style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>{profileData?.following_count || 0}</div>
-              <div style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '0.3rem', color: 'var(--primary-color)' }}><Users size={14}/> Following</div>
+              <div className="stat-value">{profileData?.following_count || 0}</div>
+              <div className="stat-label stat-primary"><Users size={14}/> Following</div>
             </div>
           </div>
         </div>
