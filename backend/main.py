@@ -1,3 +1,9 @@
+"""
+main.py
+
+Ye aapke backend ki sabse main file (entry point) hai.
+Isme saari API routes (/login, /signup, /posts) define ki gayi hain, jo Frontend (React) se requests receive karti hain aur database ke sath kaam karti hain.
+"""
 from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import OAuth2PasswordRequestForm
@@ -21,9 +27,9 @@ app.add_middleware(
         "https://react-fastapi-blog.vercel.app"
     ],
     allow_origin_regex=r"https://.*\.vercel\.app",
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_credentials=True, # Allows sending cookies/auth headers
+    allow_methods=["*"], # Allows all HTTP methods (GET, POST, etc.)
+    allow_headers=["*"], # Allows all HTTP headers
 )
 
 # --- Auth Routes ---

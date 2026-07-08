@@ -1,3 +1,9 @@
+"""
+database.py
+
+Ye file database (Supabase/Postgres) ke saath connection banati hai.
+Yahan hum SQLAlchemy use kar rahe hain taaki hum Python code se database se baat kar sakein.
+"""
 import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base

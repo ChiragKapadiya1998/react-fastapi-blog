@@ -1,3 +1,9 @@
+"""
+models.py
+
+Ye file database ke tables (jaise Users, Posts, Comments) ka structure define karti hai.
+Jab SQLAlchemy start hota hai, toh wo yahan likhe huye columns padhkar asli database mein table banata hai.
+"""
 from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, Text, Table
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func

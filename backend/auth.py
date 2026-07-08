@@ -1,3 +1,11 @@
+"""
+auth.py
+
+Ye file user authentication handle karti hai.
+Isme password ko encrypt/hash karne ka aur login hone par JWT token banake return karne ka logic likha hai.
+Ye ensure karti hai ki sirf logged-in user hi post bana sake.
+"""
+import os
 from datetime import datetime, timedelta
 from typing import Optional
 from jose import JWTError, jwt

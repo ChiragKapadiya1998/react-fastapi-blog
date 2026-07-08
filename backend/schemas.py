@@ -1,3 +1,9 @@
+"""
+schemas.py
+
+Ye file data ka format define karti hai jo Frontend (React) se aata hai ya usko bheja jata hai.
+Pydantic ensure karta hai ki koi galat data database mein save na ho jaye.
+"""
 from pydantic import BaseModel, EmailStr
 from datetime import datetime
 from typing import List, Optional
